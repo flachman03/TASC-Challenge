@@ -1,0 +1,6 @@
+<h3>Grocery Items</h3>
+<ul>
+  <li *ngFor="let groceryItem of groceryItems | async">
+    <a [href]="groceryItem.url" target="_blank">{{ groceryItem.name}}</a>
+  </li>
+</ul>

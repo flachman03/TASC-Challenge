@@ -9,6 +9,11 @@ import { LoginComponent } from './login/login.component';
 import { MyCartComponent } from './my-cart/my-cart.component';
 import { CardComponent } from './card/card.component';
 
+import { StoreModule } from '@ngrx/store'
+import { GroceryItemsReducer} from './reducers/app.reducer';
+import { ReadComponent } from './read/read.component';
+import { CreateComponent } from './create/create.component'
+
 
 @NgModule({
   declarations: [
@@ -18,9 +23,14 @@ import { CardComponent } from './card/card.component';
     LoginComponent,
     MyCartComponent,
     CardComponent,
+    ReadComponent,
+    CreateComponent,
   ],
   imports: [
     BrowserModule,
+    StoreModule.forRoot({
+      groceryItems: GroceryItemsReducer
+    }),
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
       { path: 'login', component: LoginComponent},
