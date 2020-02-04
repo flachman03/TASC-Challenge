@@ -1,6 +1,9 @@
 import { GroceryItem } from './card.interface';
 import { Component, Input } from '@angular/core';
-import { CurrencyPipe } from '@angular/common';
+import { Store } from '@ngrx/store';
+import { AppState } from './../app.state';
+import * as AppActions from './../actions/app.actions';
+
 
 @Component({
   selector: 'card',
@@ -8,15 +11,21 @@ import { CurrencyPipe } from '@angular/common';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent  {
+  constructor(private store: Store<AppState>) { }
+
   @Input() item: GroceryItem;
-  quantity = 1;
+
 
   changeQuantity(quantity) {
-    const newQuantity = this.quantity + quantity
+    const newQuantity = this.item.quantity + quantity
     if (newQuantity < 1) {
-      this.quantity = 1
+      this.item.quantity = 1
     } else {
-      this.quantity = newQuantity
+      this.item.quantity = newQuantity
     }
+  }
+
+  addGroceryItem(groceryItem) {
+    this.store.dispatch( new AppActions.AddCard(groceryItem));
   }
 }

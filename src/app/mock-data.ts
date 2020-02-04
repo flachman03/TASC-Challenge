@@ -4,13 +4,15 @@ export const mockData = [
     price: 16.00,
     imported: false,
     salesTax: 0,
-    imgUrl: '../../assets/skittles.png'
+    quantity: 1,
+    imgUrl: '../../assets/skittles.png',
   },
   {
     name: 'Walkman',
     price: 99.99,
     imported: false,
     salesTax: .1,
+    quantity: 1,
     imgUrl: '../../assets/walkman.png'
   },
   {
@@ -18,6 +20,7 @@ export const mockData = [
     price: 0.99,
     imported: false,
     salesTax: 0,
+    quantity: 1,
     imgUrl: '../../assets/popcorn.png'
   },
   {
@@ -25,6 +28,7 @@ export const mockData = [
     price: 11.00,
     imported: true,
     salesTax: 0,
+    quantity: 1,
     imgUrl: '../../assets/coffee.png'
   }
 ]

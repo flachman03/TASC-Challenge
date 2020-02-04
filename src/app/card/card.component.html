@@ -1,17 +1,20 @@
 <article class="card__container">
   <img class="card-img" src="{{ item.imgUrl }}"/>
   <h2 class="card-title">{{ item.name }}</h2>
-  <h3 class="card-price">Price: {{ item.price * quantity | currency : USD : true : 2-2}}</h3>
+  <h3 class="card-price">Price: {{ item.price * item.quantity | currency : USD : true : 2-2}}</h3>
   <div class="card-quantity__container">
     <button
       (click)="changeQuantity(-1)"
       class="card-btn__styling card-btn__remove"
     >Remove</button>
-    <p>Quantity: {{quantity}}</p>
+    <p>Quantity: {{item.quantity}}</p>
     <button
       (click)="changeQuantity(1)"
       class="card-btn__styling card-btn__add"
     >Add</button>
   </div>
-  <button class="card-btn__submit">Add to Cart!</button>
+  <button 
+    class="card-btn__submit"
+    (click)="addGroceryItem(item)"
+    >Add to Cart!</button>
 </article>

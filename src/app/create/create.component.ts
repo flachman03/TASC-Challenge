@@ -1,4 +1,9 @@
+import { GroceryItem } from './../card/card.interface';
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from './../app.state';
+import * as AppActions from './../actions/app.actions';
+
 
 @Component({
   selector: 'app-create',
@@ -7,7 +12,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<AppState>) { }
+
+      addGroceryItem(groceryItem) {
+        this.store.dispatch( new AppActions.AddCard(groceryItem))
+      }
 
   ngOnInit() {
   }

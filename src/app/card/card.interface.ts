@@ -3,5 +3,6 @@ export interface GroceryItem {
   price: number, 
   imported: boolean,
   salesTax: number,
+  quantity: number,
   imgUrl: string
 }

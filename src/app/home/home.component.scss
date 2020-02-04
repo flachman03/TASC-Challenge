@@ -3,3 +3,42 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.home-section {
+  display: flex;
+}
+
+.current-cart__container {
+  width: 400px;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.current-cart__title {
+  justify-self: center;
+  align-self: center;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+.current-cart__list {
+  list-style: none;
+  font-size: 18px;
+}
+
+.current-cart__total-price {
+  margin-left: 10px;
+  font-size: 20px;
+  border-top: 1px solid #000;
+}
+
+.current-cart__items--styling {
+  display: flex;
+  flex-direction: column;
+}

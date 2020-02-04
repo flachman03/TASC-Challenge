@@ -5,4 +5,19 @@
     [item]="groceryItem"
     ></card>
   </div>
+  <div class="current-cart__container">
+    <div class="current-cart__items--styling">
+      <h3 class="current-cart__title">Current Cart</h3>
+      <ul>
+        <li 
+          *ngFor="let currentItem of currentCart | async"
+          class="current-cart__list">
+          <p>{{currentItem.name}} * {{currentItem.quantity}} = {{ currentItem.quantity * currentItem.price | currency : USD : true : 2-2 }}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="current-cart__total-price">
+      <p>Total Price: {{calculateTotalPrice() | currency : USD : true : 2-2}}</p>
+    </div>
+  </div>
 </section>

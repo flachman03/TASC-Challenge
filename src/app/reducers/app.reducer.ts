@@ -7,6 +7,7 @@ const initialState = {
   price: 16.00,
   imported: false,
   salesTax: 0,
+  quantity: 1,
   imgUrl: '../../assets/skittles.png'
 }
 
