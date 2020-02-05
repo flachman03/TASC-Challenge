@@ -2,6 +2,9 @@
   padding: 5px;
   display: flex;
   flex-wrap: wrap;
+  overflow-y: scroll;
+  width: 70%;
+  height: 85vh;
 }
 
 .home-section {

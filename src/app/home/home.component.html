@@ -5,10 +5,10 @@
     [item]="groceryItem"
     ></card>
   </div>
-  <div class="current-cart__container">
+  <div class="current-cart__container" *ngIf="countCart()">
     <div class="current-cart__items--styling">
       <h3 class="current-cart__title">Current Cart</h3>
-      <ul>
+      <ul *ngIf="countCart()">
         <li 
           *ngFor="let currentItem of currentCart | async"
           class="current-cart__list">
@@ -17,6 +17,7 @@
       </ul>
     </div>
     <div class="current-cart__total-price">
+      <p>Total Tax: {{ calculateTaxTotal() | currency : USD : true : 2-2}}</p>
       <p>Total Price: {{calculateTotalPrice() | currency : USD : true : 2-2}}</p>
     </div>
   </div>
